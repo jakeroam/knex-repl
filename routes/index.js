@@ -1,13 +1,13 @@
 const Executor = require('../lib/Executor');
 const formatter = require('../lib/formatter');
-const version = require('./version');
+// const version = require('./version');
 
 module.exports = class Routes {
 
   constructor({ harness })
   {
     harness.get('/', this.getRoot);
-    harness.get('/version', () => version);
+    // harness.get('/version', () => version);
     harness.post('/parse', this.parse);
   }
 
@@ -34,7 +34,7 @@ module.exports = class Routes {
       throw new Error(result.err.message);
     }
 
-    return result.data;
+   return result.data;
   }
 };
 
